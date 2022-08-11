@@ -1,0 +1,20 @@
+button {
+  -webkit-appearance: none;
+  background: #1435a1;
+  color: white;
+  border: 0;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+
+  &.btn-secondary {
+    background: #555;
+  }
+
+  &[data-size="large"] {
+    font-size: 1.25em;
+  }
+
+  &[data-size="small"] {
+    font-size: 0.875em;
+  }
+}
