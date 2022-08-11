@@ -24,3 +24,18 @@ button {
   }
 }
 
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1rem;
+  background: #f7f7f7;
+}
+
+.page-header-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
