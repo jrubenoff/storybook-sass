@@ -1,7 +1,7 @@
 import "./scss/app.scss";
 
 export default {
-  title: 'Top-Level Section/Button',
+  title: 'Examples/Component',
   args: {
     label: "Button",
     size: "large",
@@ -50,26 +50,26 @@ const Button = (args) => `
   <button class="${args.type}" data-size="${args.size}">${args.label}</button>
 `;
 
-export const Primary = Button.bind({});
-Primary.args = {
+export const PrimaryButton = Button.bind({});
+PrimaryButton.args = {
   label: 'Button',
   type: 'Primary',
 };
 
-export const Secondary = Button.bind({});
-Secondary.args = {
+export const SecondaryButton = Button.bind({});
+SecondaryButton.args = {
   label: 'Button',
   type: 'Secondary',
 };
 
-export const Large = Button.bind({});
-Large.args = {
+export const LargeButton = Button.bind({});
+LargeButton.args = {
   size: 'large',
   label: 'Button',
 };
 
-export const Small = Button.bind({});
-Small.args = {
+export const SmallButton = Button.bind({});
+SmallButton.args = {
   size: 'small',
   label: 'Button',
 };
