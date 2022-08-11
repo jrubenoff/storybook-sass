@@ -5,22 +5,23 @@
 
 button {
   -webkit-appearance: none;
-  background: #1435a1;
-  color: white;
+  background: var(--c-accent);
+  color: var(--c-accent-text);
   border: 0;
   padding: 0.5em 1em;
   border-radius: 4px;
 
   &.btn-secondary {
-    background: #555;
+    background: #ccc;
+    color: var(--c-text);
   }
 
   &[data-size="large"] {
-    font-size: 1.25em;
+    font-size: var(--c-medium);
   }
 
   &[data-size="small"] {
-    font-size: 0.875em;
+    font-size: var(--c-small);
   }
 }
 
