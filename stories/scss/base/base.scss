@@ -22,6 +22,8 @@ svg {
   color: var(--c-accent-text);
 }
 
+// Visually hidden content
+
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   clip-path: inset(100%);
@@ -31,6 +33,8 @@ svg {
   position: absolute;
   white-space: nowrap;
 }
+
+// "Skip to content" button
 
 #content:focus {
   outline:none;

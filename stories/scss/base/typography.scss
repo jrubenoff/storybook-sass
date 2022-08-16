@@ -1,3 +1,6 @@
+// Set maximum width of all prose elements
+// to typographic measure
+
 * {
   max-inline-size: var(--t-measure);
 }
@@ -14,17 +17,20 @@ iframe {
   max-inline-size: unset;
 }
 
+// Responsive font sizing
+
 :root {
   font-size: clamp(1rem, calc(-1rem + 4vw), 2.5rem);
 }
 
 html {
-  -webkit-text-size-adjust: 100%;
+  line-height: var(--t-leading);
 }
+
+// Base style
 
 body {
   font-family: var(--font-primary);
-  line-height: var(--t-leading);
   color: var(--c-text);
   letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
@@ -32,9 +38,13 @@ body {
   background: #fff;
 }
 
+// Set bold weight according to imported font
+
 b, strong {
   font-weight: var(--t-bold);
 }
+
+// Heading styles
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -97,18 +107,10 @@ h5, .h5, dt {
   color: var(--c-secondary);
 }
 
+// Lists
+
 dt {
   margin-block-end: 0.25em;
-}
-
-blockquote, p, figure {
-  margin: 0;
-  padding: 0;
-}
-
-blockquote {
-  border-inline-start: 0.5rem solid var(--c-accent-light);
-  padding-inline-start: var(--t-paragraph);
 }
 
 ul,
@@ -120,6 +122,25 @@ ol {
   }
 }
 
+// Other elements
+
+a {
+  text-decoration-color: rgba(var(--c-link-text-rgb, var(--c-accent-dark-rgb)), 0.6);
+  color: var(--c-link-text, var(--c-accent-text));
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: all;
+}
+
+blockquote {
+  border-inline-start: 0.5rem solid var(--c-accent-light);
+  padding-inline-start: var(--t-paragraph);
+}
+
+figcaption {
+  color: var(--c-base);
+  font-size: var(--t-small);
+  font-family: var(--font-secondary);
+}
 
 hr {
   border: 0;
@@ -134,20 +155,7 @@ hr, hr + * {
   --l-stack-gap: var(--hr-margin);
 }
 
-a {
-  text-decoration-color: rgba(var(--c-link-text-rgb, var(--c-accent-dark-rgb)), 0.6);
-  color: var(--c-link-text, var(--c-accent-text));
-  text-decoration-thickness: 1px;
-  text-decoration-skip-ink: all;
-}
-
 time {
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
-}
-
-figcaption {
-  color: var(--c-base);
-  font-size: var(--t-small);
-  font-family: var(--font-secondary);
 }

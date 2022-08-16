@@ -1,5 +1,7 @@
 $margin-basic: 1.5rem;
 
+// Outer containers
+
 .l-wrapper,
 .l-text-wrapper {
   inline-size: var(--w-container);
@@ -13,6 +15,12 @@ $margin-basic: 1.5rem;
 .l-text-wrapper {
   max-inline-size: var(--t-measure);
 }
+
+// Media wrapper with intrinsic aspect ratio
+//
+// Customize the aspect ratio by overriding
+// var(--l-frame-width) and var(--l-frame-height)
+// within specific components
 
 .l-frame {
   --l-frame-width: 16;
@@ -30,6 +38,12 @@ $margin-basic: 1.5rem;
   }
 }
 
+// Grid wrapper that automatically tries to
+// size columns according to typographic measure
+//
+// Customize the gutters by overriding var(--g-column-gap)
+// within specific components
+
 .l-grid {
   --grid-gap: var(--g-column-gap);
   display: grid;
@@ -40,6 +54,15 @@ $margin-basic: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(Min(calc(var(--t-measure) / 2), 100%), 1fr));
   }
 }
+
+// For columns:
+// All direct descendants of .l-stack-basic
+// (and all descendants, including nested elements, of .l-stack)
+// are spaced equally apart from each other
+//
+// You can customize the exact amount of spacing by
+// overriding var(--stack-layout-gap) within specific components
+
 
 .l-stack-basic,
 .l-stack {
@@ -53,11 +76,7 @@ $margin-basic: 1.5rem;
     margin-block: 0;
 
     + * {
-      margin-top: 1.5rem;
-
-      @supports (margin-block-start: var(--l-stack-gap)) {
-        margin-block-start: var(--l-stack-gap, var(--t-paragraph));
-      }
+      margin-block-start: var(--l-stack-gap, var(--t-paragraph));
     }
   } 
 }
@@ -67,23 +86,20 @@ $margin-basic: 1.5rem;
     margin-block: 0;
 
     + * {
-      margin-top: $margin-basic;
-
-      @supports (margin-block-start: var(--l-stack-gap)) {
-        margin-top: unset;
-        margin-block-start: var(--l-stack-gap, var(--t-paragraph));
-      }
+      margin-block-start: var(--l-stack-gap, var(--t-paragraph));
     }
   } 
 }
 
+// For rows:
+// All direct descendants of .l-cluster are spaced equally
+// apart from each other
+//
+// You can customize the exact amount of spacing by
+// overriding var(--stack-layout-gap) within specific components
+
 .l-cluster {
   display: flex;
   flex-wrap: wrap;
-  margin-left: $margin-basic;
-
-  @supports (gap: var(--cluster-gap)) {
-    margin-left: unset;
-    gap: var(--cluster-gap, var(--g-column-gap));
-  }
+  gap: var(--cluster-gap, var(--g-column-gap));
 }
