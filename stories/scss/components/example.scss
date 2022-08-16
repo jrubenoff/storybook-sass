@@ -17,11 +17,11 @@ button {
   }
 
   &[data-size="large"] {
-    font-size: var(--c-medium);
+    font-size: var(--t-medium);
   }
 
   &[data-size="small"] {
-    font-size: var(--c-small);
+    font-size: var(--t-small);
   }
 }
 
